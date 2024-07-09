@@ -1,6 +1,5 @@
-package com.example.mytodo
+package com.example.mytodo.components
 
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -25,22 +24,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.mytodo.components.card.CardsScreen
-import com.example.mytodo.components.card.CardsViewModel
-import androidx.compose.runtime.*
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun TopBar(Content : String) {
 
     var presses by remember { mutableIntStateOf(0) }
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
     //val cardsViewModel by viewModel<CardsViewModel>()
 
     Scaffold(
-
         topBar = {
             CenterAlignedTopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -64,7 +58,6 @@ fun HomeScreen() {
                 },
                 scrollBehavior = scrollBehavior,
             )
-
         },
 
         floatingActionButton = {
@@ -80,6 +73,7 @@ fun HomeScreen() {
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
+
             //MyMenuItens()
             //CardsScreen(cardsViewModel)
         }

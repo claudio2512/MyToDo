@@ -1,4 +1,4 @@
-package com.example.mytodo.components.card
+package com.example.mytodo.tests.card1
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi

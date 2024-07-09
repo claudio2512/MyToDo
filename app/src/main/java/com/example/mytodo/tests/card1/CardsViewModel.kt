@@ -1,4 +1,4 @@
-package com.example.mytodo.components.card
+package com.example.mytodo.tests.card1
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
