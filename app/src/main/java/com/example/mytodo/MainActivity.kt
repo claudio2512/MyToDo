@@ -3,26 +3,25 @@ package com.example.mytodo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.mytodo.components.MyMenuItens
+import com.example.mytodo.components.card.CardsScreen
+import com.example.mytodo.components.card.CardsViewModel
 import com.example.mytodo.ui.theme.MyToDoTheme
 
 class MainActivity : ComponentActivity() {
+
+    val cardsViewModel by viewModels<CardsViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
         setContent {
             MyToDoTheme {
-                //Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyApp()
-                //}
+                CardsScreen(cardsViewModel)
+                //    MyApp()
+
             }
         }
     }
@@ -30,7 +29,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MyApp() {
-    HomeScreen()
+
 }
 
 @Preview(showBackground = true)
